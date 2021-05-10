@@ -1,0 +1,266 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build &#8212; RobotBP 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Subscribe" href="subscribe.html" />
+    <link rel="prev" title="Writting programs in RobotBP" href="writting_guid.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="subscribe.html" title="Subscribe"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="writting_guid.html" title="Writting programs in RobotBP"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RobotBP 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="tutorial.html" >RobotBP tutorial</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="writting_guid.html" accesskey="U">Writting programs in RobotBP</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Build</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="build">
+<h1>Build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="event-description">
+<h2>Event description<a class="headerlink" href="#event-description" title="Permalink to this headline">¶</a></h2>
+<p><strong>Event name:</strong> Build</p>
+<p><strong>Params:</strong> Json that describe the boards and their details.</p>
+<p>If the board is instance of EV3, for the key “Port”</p>
+<p>we specifie the name of the port the bluetooth connect to the raspberry pi.</p>
+<p>If the board is instance of Grove pi, for the key of each port</p>
+<p>we specifie the name of the sensor that connect to the port.</p>
+<p><strong>Description:</strong> The program get the boards and ports which connected to them
+and build their instances in the system and connect them.</p>
+</div>
+<div class="section" id="json-structure">
+<h2>Json structure<a class="headerlink" href="#json-structure" title="Permalink to this headline">¶</a></h2>
+<p>The parameter of the json must be with specifice structure</p>
+<p>You can select what kind of boards you use, in each board the dictionary is detemenistic with the same keys.</p>
+<p>for example if you select one EV3 and one Grove pi the json will be in this structure:</p>
+<div class="highlight-javascript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="p">{</span>
+      <span class="s2">&quot;EV3&quot;</span><span class="o">:</span>
+          <span class="p">[{</span>
+              <span class="s2">&quot;Port&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+          <span class="p">}]</span>
+      <span class="p">,</span>
+      <span class="s2">&quot;GrovePi&quot;</span><span class="o">:</span>
+          <span class="p">[{</span>
+              <span class="s2">&quot;A0&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;A1&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;A2&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;D2&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;D3&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;D4&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;D5&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;D6&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;D7&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;D8&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+          <span class="p">}]</span>
+  <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>in the values you put :</p>
+<p>For EV3 port: the name of the port the bluetooth connect to the raspberry pi.</p>
+<p>For Grove pi ports: The optional sensors that the system support with, are:</p>
+<ul class="simple">
+<li><p>“Led”</p></li>
+<li><p>“Ultrasonic”</p></li>
+<li><p>“Sound”</p></li>
+<li><p>“Button”</p></li>
+<li><p>“Rotary”</p></li>
+<li><p>“Relay”</p></li>
+<li><p>“Light”</p></li>
+<li><p>“Buzzer”</p></li>
+<li><p>“Temperature DHT11”</p></li>
+<li><p>“Temperature DHT21”</p></li>
+<li><p>“Temperature DHT22”</p></li>
+<li><p>“Temperature AM2301”</p></li>
+</ul>
+<p>The ports of the gorve pi are A0-A2 and D0-D8</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">var</span> <span class="nx">allEventsButBuildEventSet</span> <span class="o">=</span> <span class="nx">bp</span><span class="p">.</span><span class="nx">EventSet</span><span class="p">(</span><span class="s2">&quot;Block all for build&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="o">!</span><span class="nx">e</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">equals</span><span class="p">(</span><span class="s2">&quot;Build&quot;</span><span class="p">);</span>
+ <span class="p">});</span>
+
+
+ <span class="nx">bp</span><span class="p">.</span><span class="nx">registerBThread</span><span class="p">(</span><span class="s2">&quot;Initiation&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+     <span class="nx">bp</span><span class="p">.</span><span class="nx">sync</span><span class="p">({</span><span class="nx">block</span><span class="o">:</span> <span class="nx">allEventsButBuildEventSet</span><span class="p">,</span> <span class="nx">request</span><span class="o">:</span> <span class="nx">bp</span><span class="p">.</span><span class="nx">Event</span><span class="p">(</span><span class="s2">&quot;Build&quot;</span><span class="p">,</span>
+             <span class="p">{</span>
+                 <span class="s2">&quot;EV3&quot;</span><span class="o">:</span>
+                     <span class="p">[{</span>
+                         <span class="s2">&quot;Port&quot;</span><span class="o">:</span> <span class="s2">&quot;rfcomm0&quot;</span>
+                     <span class="p">}]</span>
+                 <span class="p">,</span>
+                 <span class="s2">&quot;GrovePi&quot;</span><span class="o">:</span>
+                     <span class="p">[{</span>
+                         <span class="s2">&quot;A0&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;A1&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;A2&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;D2&quot;</span><span class="o">:</span> <span class="s2">&quot;Led&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;D3&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;D4&quot;</span><span class="o">:</span> <span class="s2">&quot;Ultrasonic&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;D5&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;D6&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;D7&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;D8&quot;</span><span class="o">:</span> <span class="s2">&quot;Led&quot;</span>
+                     <span class="p">}]</span>
+             <span class="p">}</span>
+             <span class="p">)})</span>
+ <span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The “Build” Event must to execute first, because all the other events</p>
+<p>depends on the robot that must build in our program first.</p>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Build</a><ul>
+<li><a class="reference internal" href="#event-description">Event description</a></li>
+<li><a class="reference internal" href="#json-structure">Json structure</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="writting_guid.html"
+                        title="previous chapter">Writting programs in RobotBP</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="subscribe.html"
+                        title="next chapter">Subscribe</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/build.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="subscribe.html" title="Subscribe"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="writting_guid.html" title="Writting programs in RobotBP"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RobotBP 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="tutorial.html" >RobotBP tutorial</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="writting_guid.html" >Writting programs in RobotBP</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Build</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Adi Jumah, David Ziegler, Peleg Avraham.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

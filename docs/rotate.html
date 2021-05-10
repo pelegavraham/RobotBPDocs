@@ -1,0 +1,158 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate &#8212; RobotBP 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Packages and Classes" href="classes.html" />
+    <link rel="prev" title="Drive" href="drive.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="classes.html" title="Packages and Classes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="drive.html" title="Drive"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RobotBP 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="tutorial.html" >RobotBP tutorial</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="writting_guid.html" accesskey="U">Writting programs in RobotBP</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Rotate</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="rotate">
+<h1>Rotate<a class="headerlink" href="#rotate" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="event-description">
+<h2>Event description<a class="headerlink" href="#event-description" title="Permalink to this headline">¶</a></h2>
+<p><strong>Event name:</strong> Rotate</p>
+<p><strong>Params:</strong> Json that specifie for each port on the boards the speed and angel the motor spin.</p>
+<p><strong>Description:</strong> The program get the speed and angle for each port, check the motors which connect to them,</p>
+<p>and spin the robot’s motors acoording to those speeds and angels.</p>
+</div>
+<div class="section" id="json-structure">
+<h2>Json structure<a class="headerlink" href="#json-structure" title="Permalink to this headline">¶</a></h2>
+<p>First, select the key as the type of the board “EV3” or “GrovePi”.</p>
+<p>The value of the type can be one from the two options:</p>
+<p>If you have only one board of this type, the value can be array that contain the speed and the angel.</p>
+<p>The second option, the value will be a json such that the key will be the index of the board, depending on how it is written in the build event,</p>
+<p>and the value will be json when the key is the port that the motor connect to, and the value is the speed, for the board’th.</p>
+<p>for example if you have one EV3 and motors that connected to port “B” and “C”, the json will be in this structure:</p>
+<div class="highlight-javascript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="nx">bp</span><span class="p">.</span><span class="nx">sync</span><span class="p">({</span><span class="nx">request</span><span class="o">:</span> <span class="nx">bp</span><span class="p">.</span><span class="nx">Event</span><span class="p">(</span><span class="s2">&quot;Rotate&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;EV3&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;B&quot;</span><span class="o">:</span> <span class="p">[,],</span> <span class="s2">&quot;C&quot;</span><span class="o">:</span> <span class="p">[,]}})});</span>
+</pre></div>
+</td></tr></table></div>
+<p>The value of keys “B” and “C” will be that speed and angel you want the motor move respectively.</p>
+<p>The ports in the keys can be:</p>
+<p>For EV3 ports: “1”, “2”, “3”, “4” “A” “B” “C” “D”</p>
+<p>For Grove pi ports: “A0”, “A1”, “A2”, “D0”, “D1”, “D2”, “D3”, “D4”, “D5”, “D6”, “D7”, “D8”</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="nx">bp</span><span class="p">.</span><span class="nx">registerBThread</span><span class="p">(</span><span class="s2">&quot;Pickup in 90 degree&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+          <span class="nx">bp</span><span class="p">.</span><span class="nx">sync</span><span class="p">({</span><span class="nx">request</span><span class="o">:</span> <span class="nx">bp</span><span class="p">.</span><span class="nx">Event</span><span class="p">(</span><span class="s2">&quot;Rotate&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;EV3&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;B&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">90</span><span class="p">],</span> <span class="s2">&quot;C&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">90</span><span class="p">]}})});</span>
+      <span class="p">}</span>
+  <span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Rotate</a><ul>
+<li><a class="reference internal" href="#event-description">Event description</a></li>
+<li><a class="reference internal" href="#json-structure">Json structure</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="drive.html"
+                        title="previous chapter">Drive</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="classes.html"
+                        title="next chapter">Packages and Classes</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/rotate.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="classes.html" title="Packages and Classes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="drive.html" title="Drive"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RobotBP 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="tutorial.html" >RobotBP tutorial</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="writting_guid.html" >Writting programs in RobotBP</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Rotate</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Adi Jumah, David Ziegler, Peleg Avraham.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

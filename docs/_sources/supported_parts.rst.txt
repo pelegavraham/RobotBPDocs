@@ -1,0 +1,4 @@
+.. _parts:
+
+The parts we need for installation and coding
+=============================================
