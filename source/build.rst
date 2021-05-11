@@ -12,11 +12,12 @@ If the board is instance of EV3, for the key "Port"
 
 we specifie the name of the port the bluetooth connect to the raspberry pi.
 
-If the board is instance of Grove pi, for the key of each port 
+If the board is instance of Grove pi, for the key of each port the sensors connected
 
 we specifie the name of the sensor that connect to the port.
 
 **Description:** The program get the boards and ports which connected to them 
+
 and build their instances in the system and connect them.
 
 
@@ -83,7 +84,7 @@ For Grove pi ports: The optional sensors that the system support with, are:
 
 * "Temperature AM2301"
 
-The ports of the gorve pi are A0-A2 and D0-D8
+The ports of the grove pi are A0-A2 and D0-D8
 
 Example
 ----------
