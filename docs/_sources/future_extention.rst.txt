@@ -1,4 +1,2 @@
-.. _extentions:
-
-Extending RobotBP
-=================================
+Developer Manual: Extending RobotBP
+=====================================

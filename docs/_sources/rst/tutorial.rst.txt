@@ -1,9 +1,0 @@
-
-RobotBP tutorial
-=================
-
-.. toctree::
-   :maxdepth: 2
-
-   \rst\tutorial\introduction
-   \rst\tutorial\writting_guid

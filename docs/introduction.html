@@ -18,8 +18,8 @@
     <script src="_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Writting programs in RobotBP" href="writting_guid.html" />
-    <link rel="prev" title="RobotBP tutorial" href="tutorial.html" />
+    <link rel="next" title="Build" href="build.html" />
+    <link rel="prev" title="User Manual: Commands in RobotBP tutorial" href="tutorial.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script src="_static/css3-mediaqueries.js"></script>
@@ -32,13 +32,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="writting_guid.html" title="Writting programs in RobotBP"
+          <a href="build.html" title="Build"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="tutorial.html" title="RobotBP tutorial"
+          <a href="tutorial.html" title="User Manual: Commands in RobotBP tutorial"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">RobotBP 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="tutorial.html" accesskey="U">RobotBP tutorial</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="tutorial.html" accesskey="U">User Manual: Commands in RobotBP tutorial</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Introduction</a></li> 
       </ul>
     </div>  
@@ -51,24 +51,24 @@
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="code-usage">
-<h2>Code Usage<a class="headerlink" href="#code-usage" title="Permalink to this headline">¶</a></h2>
+<h2>Code usage<a class="headerlink" href="#code-usage" title="Permalink to this headline">¶</a></h2>
 <p>What can you do within the interface supply to you?</p>
 <ul class="simple">
 <li><p>Set the values of sensors in the robot. It serves as a light led, to turn on a buzzer etc.</p></li>
 <li><p>Get the values from sensors in the robot</p></li>
 <li><p>Make the robot drive</p></li>
-<li><p>Rotate the arms of the robot</p></li>
+<li><p>Rotate the motor of the robot</p></li>
 </ul>
 <p>Your program in BPjs will include some bEvent that cause those effects.</p>
 <p>All the information you need will be specified later.</p>
-<p>In addition, it is open source and you can add more functionality as you wish.</p>
 </div>
-<div class="section" id="download-the-code-from-git">
-<h2>Download the code from git<a class="headerlink" href="#download-the-code-from-git" title="Permalink to this headline">¶</a></h2>
-<p>link to Robot repo: <a class="reference external" href="https://github.com/Dave-Zi/Robot">https://github.com/Dave-Zi/Robot</a></p>
-<p>link to RobotActorator repo: <a class="reference external" href="https://github.com/Dave-Zi/RobotActuator">https://github.com/Dave-Zi/RobotActuator</a></p>
-<p>link to BPjsRobotProject repo: <a class="reference external" href="https://github.com/Dave-Zi/BPjsRobotProject">https://github.com/Dave-Zi/BPjsRobotProject</a></p>
-<p>link to RobotUtils repo: <a class="reference external" href="https://github.com/Dave-Zi/RobotUtils">https://github.com/Dave-Zi/RobotUtils</a></p>
+<div class="section" id="coding-programs-in-robotbp">
+<h2>Coding programs in RobotBP<a class="headerlink" href="#coding-programs-in-robotbp" title="Permalink to this headline">¶</a></h2>
+<p>In the next tutorials you will learn how to write the code according to the interface you given.</p>
+<p><strong>Where to write?</strong></p>
+<p>The code of the commands you want to send to the robot will be in js file written in BPjs.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">samplebpjsproject\HelloWorld.java</span></code> in <code class="docutils literal notranslate"><span class="pre">ResourceBProgram(&quot;FILE_NAME.js&quot;)</span></code> will be the name of the file.</p>
+<p>All the commands that you learn in the following tutorials will be written in this js file.</p>
 </div>
 </div>
 
@@ -82,18 +82,18 @@
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Introduction</a><ul>
-<li><a class="reference internal" href="#code-usage">Code Usage</a></li>
-<li><a class="reference internal" href="#download-the-code-from-git">Download the code from git</a></li>
+<li><a class="reference internal" href="#code-usage">Code usage</a></li>
+<li><a class="reference internal" href="#coding-programs-in-robotbp">Coding programs in RobotBP</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="tutorial.html"
-                        title="previous chapter">RobotBP tutorial</a></p>
+                        title="previous chapter">User Manual: Commands in RobotBP tutorial</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="writting_guid.html"
-                        title="next chapter">Writting programs in RobotBP</a></p>
+  <p class="topless"><a href="build.html"
+                        title="next chapter">Build</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -122,13 +122,13 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="writting_guid.html" title="Writting programs in RobotBP"
+          <a href="build.html" title="Build"
              >next</a> |</li>
         <li class="right" >
-          <a href="tutorial.html" title="RobotBP tutorial"
+          <a href="tutorial.html" title="User Manual: Commands in RobotBP tutorial"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">RobotBP 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="tutorial.html" >RobotBP tutorial</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="tutorial.html" >User Manual: Commands in RobotBP tutorial</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Introduction</a></li> 
       </ul>
     </div>

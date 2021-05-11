@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Project exampels" href="exampels.html" />
-    <link rel="prev" title="Rotate" href="rotate.html" />
+    <link rel="prev" title="My Algorithm" href="myAlgorithm.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script src="_static/css3-mediaqueries.js"></script>
@@ -35,7 +35,7 @@
           <a href="exampels.html" title="Project exampels"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="rotate.html" title="Rotate"
+          <a href="myAlgorithm.html" title="My Algorithm"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">RobotBP 0.1 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Packages and Classes</a></li> 
@@ -49,8 +49,50 @@
             
   <div class="section" id="packages-and-classes">
 <h1>Packages and Classes<a class="headerlink" href="#packages-and-classes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="class-diagram">
+<h2>Class Diagram<a class="headerlink" href="#class-diagram" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="_images/Class_Diagram_complete.jpg"><img alt="_images/Class_Diagram_complete.jpg" src="_images/Class_Diagram_complete.jpg" style="width: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="class-diagram-relations">
+<h2>Class Diagram Relations<a class="headerlink" href="#class-diagram-relations" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default">
 <a class="reference internal image-reference" href="_images/Class_Diagram.jpg"><img alt="_images/Class_Diagram.jpg" src="_images/Class_Diagram.jpg" style="width: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="robotactuator">
+<h2>RobotActuator<a class="headerlink" href="#robotactuator" title="Permalink to this headline">¶</a></h2>
+<p><strong>CommandHandler</strong>: handling the commands that gets from the program by the CommunicationHandler and update the RobotSensorData.</p>
+<p><strong>Actuator</strong>: Collect the data from the robot when the data is updated and send it by the CommunicationHandler.</p>
+<p>Receive commands and execute the appropriate function as define by the CommandsHandler.</p>
+</div>
+<div class="section" id="bpjsproject">
+<h2>BPjsProject<a class="headerlink" href="#bpjsproject" title="Permalink to this headline">¶</a></h2>
+<p><strong>RobotBPProgramRunnerListener</strong>: Get the updated values from the queue that define by the CommunicationHandler and update the RobotSensorData.</p>
+<p>Send the command from the js file over the queue that define by the CommunicationHandler</p>
+<p><strong>HelloWorld</strong>: The main class that define the js file native and add the RobotBPProgramRunnerListener.</p>
+</div>
+<div class="section" id="robot">
+<h2>Robot<a class="headerlink" href="#robot" title="Permalink to this headline">¶</a></h2>
+<p><strong>IBoard</strong>: Interface for the boards in the system for the actions they can be supported.</p>
+<p><strong>GrovePiBoard</strong>: Represent the Grove Pi and responsible for performing operations related to Grove Pi.</p>
+<p>The GrovePi has analog(A0-A2) and digital(D3-D8) sensors that derived in the GrovePiBoard to sensors their values can be set and sensors their values only get.</p>
+<p><strong>Ev3Board</strong>: Represent the Ev3 Mindstorms and responsible for performing operations related to EV3.</p>
+<p>The EV3Board has EV3 instance such that the implementation of the functions in the IBoard interface calls the functions of the EV3.</p>
+<p><strong>Ev3</strong>: The EV3 send messages of bytes to the physical EV3 board which connected by the SerialPort.</p>
+</div>
+<div class="section" id="robotutils">
+<h2>RobotUtils<a class="headerlink" href="#robotutils" title="Permalink to this headline">¶</a></h2>
+<p><strong>CommunicationHandler</strong>: Handle the communication between the commands that send to the robot from the user and the data that back from the robot.</p>
+<p>Open different queues for different commands and send and receive the data over the appropriate queue.</p>
+<ul class="simple">
+<li><p>Commands queue: pass regular (not special) commands. Example: drive/rotate command.</p></li>
+<li><p>SOS queue: pass special commands that must receive and can’t be override for the speed communication of the system. Example: build command.</p></li>
+<li><p>Data queue: pass the data that back from the robots in json which contain the value for each port.</p></li>
+<li><p>Free queue: pass json the programmer wants for his algorithm.</p></li>
+</ul>
+<p><strong>RobotSensorData</strong>: Hold the values that back from the robot’s sensors in the portsMap.</p>
 </div>
 </div>
 
@@ -61,9 +103,22 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Packages and Classes</a><ul>
+<li><a class="reference internal" href="#class-diagram">Class Diagram</a></li>
+<li><a class="reference internal" href="#class-diagram-relations">Class Diagram Relations</a></li>
+<li><a class="reference internal" href="#robotactuator">RobotActuator</a></li>
+<li><a class="reference internal" href="#bpjsproject">BPjsProject</a></li>
+<li><a class="reference internal" href="#robot">Robot</a></li>
+<li><a class="reference internal" href="#robotutils">RobotUtils</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="rotate.html"
-                        title="previous chapter">Rotate</a></p>
+  <p class="topless"><a href="myAlgorithm.html"
+                        title="previous chapter">My Algorithm</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="exampels.html"
                         title="next chapter">Project exampels</a></p>
@@ -98,7 +153,7 @@
           <a href="exampels.html" title="Project exampels"
              >next</a> |</li>
         <li class="right" >
-          <a href="rotate.html" title="Rotate"
+          <a href="myAlgorithm.html" title="My Algorithm"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">RobotBP 0.1 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Packages and Classes</a></li> 

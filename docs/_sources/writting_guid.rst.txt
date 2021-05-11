@@ -1,6 +1,6 @@
 
 Writting programs in RobotBP
-=============================================
+=============================
 
 In the next tutorials you will learn how to write the code according to the interface you given.
 
@@ -21,3 +21,4 @@ So all the code that you learn here, is rellevant to this js file.
    setSensor
    drive
    rotate
+   myAlgorithm

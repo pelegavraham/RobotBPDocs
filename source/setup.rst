@@ -4,7 +4,7 @@ Setup instructions
 ===================================
 
 1. setting up the raspberry pi
--------------------------------
+--------------------------------
 
 Your first steps with the raspberry pi can be supported with this `site <https://projects.raspberrypi.org/en/projects/raspberry-pi-getting-started>`_.
 
@@ -15,7 +15,7 @@ To download VNC click `here <https://www.realvnc.com/en/connect/download/viewer/
 The connection between the comuter and the raspberry made in the VNC by entering the ip of the raspberry with the user name and password you defined at the installation.
 
 2. setting up the grove pi
------------------------------
+----------------------------
 
 The connection between the raspberry and the grove is made physically by adding the grove above the raspberry. 
 
@@ -51,6 +51,18 @@ In the code that provide to you, there is communication between the commands tha
 The communication implemented in platform who called: RabbitMQ.
 
 To download RabbitMQ on the raspberry-pi follow the instroductions `here <https://www.rabbitmq.com/install-debian.html>`__.
+
+6. Download the code from github
+----------------------------------
+
+link to Robot repo: https://github.com/Dave-Zi/Robot
+
+link to RobotActorator repo: https://github.com/Dave-Zi/RobotActuator
+
+link to BPjsRobotProject repo: https://github.com/Dave-Zi/BPjsRobotProject
+
+link to RobotUtils repo: https://github.com/Dave-Zi/RobotUtils
+
 
 .. admonition:: Note!
 

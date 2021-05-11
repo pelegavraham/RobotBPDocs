@@ -11,7 +11,7 @@ If you are new to BPjs you can learn from the tutorial in: `BPjs tutorial <https
 In additional, you can learn how the source code is building, such that if you want to extend it this will be easier.
 
 Topics:
-===================================
+========
 
 .. toctree::
    :maxdepth: 2
@@ -19,9 +19,10 @@ Topics:
    hardware_required
    setup
    tutorial
+   future_extention
    classes
    exampels
-   future_extention
+
    
 
 

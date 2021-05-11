@@ -1,4 +1,0 @@
-.. _extentions:
-
-Extending RobotBP
-=================================

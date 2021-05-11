@@ -1,8 +1,8 @@
 
 Introduction
-==============
+=============
 
-Code Usage
+Code usage
 -----------
 
 What can you do within the interface supply to you?
@@ -13,21 +13,23 @@ What can you do within the interface supply to you?
 
 * Make the robot drive
 
-* Rotate the arms of the robot
+* Rotate the motor of the robot
 
 Your program in BPjs will include some bEvent that cause those effects. 
 
 All the information you need will be specified later.
 
-In addition, it is open source and you can add more functionality as you wish.
+Coding programs in RobotBP
+---------------------------
 
-Download the code from git
-----------------------------
+In the next tutorials you will learn how to write the code according to the interface you given.
 
-link to Robot repo: https://github.com/Dave-Zi/Robot
+**Where to write?**
 
-link to RobotActorator repo: https://github.com/Dave-Zi/RobotActuator
+The code of the commands you want to send to the robot will be in js file written in BPjs.
 
-link to BPjsRobotProject repo: https://github.com/Dave-Zi/BPjsRobotProject
+In ``samplebpjsproject\HelloWorld.java`` in ``ResourceBProgram("FILE_NAME.js")`` will be the name of the file.
 
-link to RobotUtils repo: https://github.com/Dave-Zi/RobotUtils
+All the commands that you learn in the following tutorials will be written in this js file.
+
+
