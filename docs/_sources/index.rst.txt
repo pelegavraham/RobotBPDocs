@@ -18,13 +18,10 @@ Topics:
 
    hardware_required
    setup
-   tutorial
-   future_extention
+   userManual
+   devManual
    classes
-   exampels
-
-   
-
+   example
 
 
 Indices and tables

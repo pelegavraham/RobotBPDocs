@@ -5,7 +5,7 @@ User Manual: Commands in RobotBP tutorial
 .. toctree::
    :maxdepth: 2
 
-   introduction
+   userIntro
    build
    subscribe
    unsubscribe

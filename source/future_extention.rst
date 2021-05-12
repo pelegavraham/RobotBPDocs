@@ -1,2 +1,0 @@
-Developer Manual: Extending RobotBP
-=====================================
