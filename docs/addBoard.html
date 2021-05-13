@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Add Queue" href="addQueue.html" />
-    <link rel="prev" title="Add Board’s Functionality" href="addOperation.html" />
+    <link rel="prev" title="Add Command" href="addOperation.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script src="_static/css3-mediaqueries.js"></script>
@@ -35,7 +35,7 @@
           <a href="addQueue.html" title="Add Queue"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="addOperation.html" title="Add Board’s Functionality"
+          <a href="addOperation.html" title="Add Command"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">RobotBP 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="devManual.html" accesskey="U">Developer Manual: Extending RobotBP</a> &#187;</li>
@@ -50,6 +50,46 @@
             
   <div class="section" id="add-board">
 <h1>Add Board<a class="headerlink" href="#add-board" title="Permalink to this headline">¶</a></h1>
+<p>For now the system supported in GrovePi and EV3. The boards defines in Robot repository</p>
+<p>In fact, support for additional boards can be added in a simple way such that</p>
+<p>the structure of the system will be preserved. We show here the way to do this.</p>
+<div class="section" id="create-new-board">
+<h2>1. Create new board<a class="headerlink" href="#create-new-board" title="Permalink to this headline">¶</a></h2>
+<p>Assume you buy a new robot and you want the system support it.</p>
+<p>In Robot repository we define general interface for the boards called “IBoard”.</p>
+<p>In the interface there are several general functions we want the board be supported</p>
+<p>like: get and set double and boolean sensor data, drive, rotate etc.</p>
+<p>If you want your robot will support some of those functions:</p>
+<p>create new class for the board that implements the IBoard interface.</p>
+<p>Inside the appropriate functions define the implementation according to the manual of the robot.</p>
+<p>For study you can look as an example on Ev3Board and GrovePiBoard which implements the IBoard interface.</p>
+<div class="figure align-default">
+<img alt="_images/IBoard.jpg" src="_images/IBoard.jpg" />
+</div>
+</div>
+<div class="section" id="add-new-ports-support">
+<h2>2. Add new ports support<a class="headerlink" href="#add-new-ports-support" title="Permalink to this headline">¶</a></h2>
+<p>The new robot comes with several ports, his sensors connected to the ports</p>
+<p>through them you can send and receive information.</p>
+<p>We create Enums for the existing boards to represent the ports to enforce improper input of the port name.</p>
+<p>All the Enums exist in package called “Enums”.</p>
+<p>The user need to use the enums to deal with the appropriate ports, and in the implementation of the board’s</p>
+<p>functions will be the transformation from the enum to the desired behavior.</p>
+<p>If you want to add the support in new ports:</p>
+<p>Create new Enum for the ports that will implements the “IPortEnums” interface.</p>
+<p>You can look as example at “GrovePiPort” enum.</p>
+<p>If you have several types of ports you can create several enums that implements one interface that will</p>
+<p>extend the “IPortEnums” interface.</p>
+<p>You can look as example at “IEv3Port” interface.</p>
+<div class="figure align-default">
+<img alt="_images/enums.jpg" src="_images/enums.jpg" />
+</div>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note!</p>
+<p>All the implementation of the bytes that send to the robot depending on each function,</p>
+<p>is your responsibility and need to be implement according to the hardware manual.</p>
+</div>
+</div>
 </div>
 
 
@@ -59,9 +99,18 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Add Board</a><ul>
+<li><a class="reference internal" href="#create-new-board">1. Create new board</a></li>
+<li><a class="reference internal" href="#add-new-ports-support">2. Add new ports support</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="addOperation.html"
-                        title="previous chapter">Add Board’s Functionality</a></p>
+                        title="previous chapter">Add Command</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="addQueue.html"
                         title="next chapter">Add Queue</a></p>
@@ -96,7 +145,7 @@
           <a href="addQueue.html" title="Add Queue"
              >next</a> |</li>
         <li class="right" >
-          <a href="addOperation.html" title="Add Board’s Functionality"
+          <a href="addOperation.html" title="Add Command"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">RobotBP 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="devManual.html" >Developer Manual: Extending RobotBP</a> &#187;</li>
