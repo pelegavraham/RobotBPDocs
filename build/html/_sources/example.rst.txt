@@ -3,7 +3,7 @@
 Project example
 ================
 
-.. code-block:: java
+.. code-block:: javascript
   :linenos:
 
   var allEventsButBuildEventSet = bp.EventSet("Block all for build", function (e) {
@@ -21,7 +21,7 @@ Project example
   var direction = 1;
 
   bp.registerBThread("Do Something with Data", function () {
-      bp.sync({request: bp.Event("Subscribe", {"GrovePi": ["D4"]})});
+      bp.sync({request: bp.Event("Subscribe", {"GrovePi": ["D2", "D4"]})});
 
       while (true) {
           var e = bp.sync({waitFor: dataEventSet});
@@ -79,24 +79,26 @@ Project example
       bp.sync({request: bp.Event("Test", data)});
   });
 
-
   bp.registerBThread("Initiation", function () {
       bp.sync({
           block: allEventsButBuildEventSet, request: bp.Event("Build",
               {
                   "EV3":
                       [{
-                          "Port": "rfcomm0"
+                          "Name": "EV3_1",
+                          "Port": "rfcomm0",
+                          "2": {"Name": "UV3"}
                       }]
                   ,
                   "GrovePi":
                       [{
-                          "A0": "",
+                          "Name": "GrovePi1",
+                          "A0": {"Name": "", "Device": ""},
                           "A1": "",
                           "A2": "",
-                          "D2": "Led",
+                          "D2": {"Name": "MyLed", "Device": "Led"},
                           "D3": "",
-                          "D4": "Ultrasonic",
+                          "D4": {"Name": "UV", "Device": "Ultrasonic"},
                           "D5": "",
                           "D6": "",
                           "D7": "",
