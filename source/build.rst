@@ -6,29 +6,27 @@ Event description
 
 **Event name:** Build
 
-**Params:** Json that describe the boards and their details. 
+**Params:** Json that describe the boards to support and their details.
 
-If the board is instance of EV3, for the key "Port" 
+* If the board is instance of EV3: for the key 'Port' we specifies the name of the port through him the bluetooth connect to the raspberry pi, as value.
 
-we specifie the name of the port the bluetooth connect to the raspberry pi.
+* If the board is instance of Grove pi: for the key of each port the sensors connected we specifies the name of the sensor that connect to the port.
 
-If the board is instance of Grove pi, for the key of each port the sensors connected
-
-we specifie the name of the sensor that connect to the port.
-
-**Description:** The program get the boards and ports which connected to them 
-
-and build their instances in the system and connect them.
+**Description:** The program get the boards and ports which connected to them and build their instances in the system and connect them.
 
 
 Json structure
 ----------------
 
-The parameter of the json must be with specifice structure
+For each board type 'EV3' and 'GrovePi' as key specifies array as value.
 
-You can select what kind of boards you use, in each board the dictionary is detemenistic with the same keys. 
+In the array will be one or several json that represent the data of the appropriate boards.
 
-for example if you select one EV3 and one Grove pi the json will be in this structure:
+The data for EV3 is: the key 'Port', and value is the serial port through him the bluetooth connect to the raspberry pi.
+
+The data for GrovePi is: the keys are the ports(A0-A2, D3-D8) that the sensor connected to, and the values are the names of the sensors.
+
+For example if you have one EV3 and one Grove pi the json without the values will be in this structure:
 
 .. code-block:: javascript
   :linenos:
@@ -54,37 +52,35 @@ for example if you select one EV3 and one Grove pi the json will be in this stru
             }]
     }
 
-in the values you put : 
-
-For EV3 port: the name of the port the bluetooth connect to the raspberry pi.
-
 For Grove pi ports: The optional sensors that the system support with, are:
 
-* "Led"
+.. list-table::
+   :widths: 15 10 30
 
-* "Ultrasonic"
+   * - Led
+     - Ultrasonic
+     - Sound
+   * - Button
+     - Rotary
+     - Relay
+   * - Light
+     - Buzzer
+     - Temperature DHT11
+   * - Temperature DHT21
+     - Temperature DHT22
+     - Temperature AM2301
 
-* "Sound"
+As mention, the ports of the grove pi are A0-A2 and D0-D8
 
-* "Button"
+Support nick names
+-------------------
+In addition, you can rename the boards and the ports you build, so that it will be easier for you to call them.
 
-* "Rotary"
+To rename the board you need to add 'Name' as key and the name as the value to the json of the board
 
-* "Relay"
+To rename the ports: in the EV3 add the port name(A-D, 1-4) as key, json with 'Name' as key and the name as the value, as value to the json of the EV3 board
 
-* "Light"
-
-* "Buzzer"
-
-* "Temperature DHT11"
-
-* "Temperature DHT21"
-
-* "Temperature DHT22"
-
-* "Temperature AM2301"
-
-The ports of the grove pi are A0-A2 and D0-D8
+in the GrovePi add to the port name(A0-A2, D0-D8) as key, json with 'Name' and 'Device' as keys and the name want and the name of the sensor respectively as the values, as value.
 
 Example
 ----------
@@ -98,33 +94,36 @@ Example
 
 
    bp.registerBThread("Initiation", function () {
-       bp.sync({block: allEventsButBuildEventSet, request: bp.Event("Build",
-               {
-                   "EV3":
-                       [{
-                           "Port": "rfcomm0"
-                       }]
-                   ,
-                   "GrovePi":
-                       [{
-                           "A0": "",
-                           "A1": "",
-                           "A2": "",
-                           "D2": "Led",
-                           "D3": "",
-                           "D4": "Ultrasonic",
-                           "D5": "",
-                           "D6": "",
-                           "D7": "",
-                           "D8": "Led"
-                       }]
-               }
-               )})
+      bp.sync({
+          block: allEventsButBuildEventSet, request: bp.Event("Build",
+              {
+                  "EV3":
+                      [{
+                          "Name": "EV3_1",
+                          "Port": "rfcomm0",
+                          "2": {"Name": "UV3"}
+                      }]
+                  ,
+                  "GrovePi":
+                      [{
+                          "Name": "GrovePi1",
+                          "A0": {"Name": "", "Device": ""},
+                          "A1": "",
+                          "A2": "",
+                          "D2": {"Name": "MyLed", "Device": "Led"},
+                          "D3": "",
+                          "D4": {"Name": "UV", "Device": "Ultrasonic"},
+                          "D5": "",
+                          "D6": "",
+                          "D7": "",
+                          "D8": "Led"
+                      }]
+              }
+          )
+      })
    });
 
 
 .. warning::
    
-   The "Build" Event must to execute first, because all the other events 
-
-   depends on the robot that must build in our program first.
+   The Build Event must to execute first, because all the other events depends on the robot that must build in our program first.

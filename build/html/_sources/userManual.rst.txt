@@ -9,7 +9,8 @@ User Manual: Commands in RobotBP tutorial
    build
    subscribe
    unsubscribe
-   setSensor
+   setActuatorData
+   setSensorMode
    drive
    rotate
    myAlgorithm

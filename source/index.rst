@@ -5,10 +5,12 @@
 
 Welcome to RobotBP's documentation!
 ===================================
-Here you can learn how to acturate Lego-robot and Grove-pi with behavioral programs written in Javascript, whats called BPjs.
+Here you will learn how to actuate robot based on raspberry-pi supported EV3 Lego and Grove-pi kit with behavioral
+programming written in Javascript, whats called BPjs.
+
 If you are new to BPjs you can learn from the tutorial in: `BPjs tutorial <https://bpjs.readthedocs.io/en/latest/>`_
 
-In additional, you can learn how the source code is building, such that if you want to extend it this will be easier.
+In additional, you will learn on several ways how to extend the existing project.
 
 Topics:
 ========

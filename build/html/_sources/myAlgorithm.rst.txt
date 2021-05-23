@@ -1,14 +1,12 @@
 My Algorithm
 =============
 
-
 Event description
 ------------------
 
 **Event name:** MyAlgorithm
 
 **Params:** Json with the boards to run the algorithm belongs them and their indexes,
-
 and for each board specifies the parameters that the programmer needs for the algorithm with free hand of the programmer.
 
 **Description:** The system executes the algorithm of each board the programmer request with the appropriate params. The algorithm defines by the programmer.
@@ -17,13 +15,10 @@ and for each board specifies the parameters that the programmer needs for the al
 Json structure
 ----------------
 
-First, select the key as the type of the board "EV3" or "GrovePi". 
-
-The value of the type will be a json such that the key will be the index of the board, depending on how it is written in the build event,
-
+For each board type 'EV3' and 'GrovePi' as key specifies the value will be a json such that the key will be the index of the board (depending on how it is written in the build event),
 and the value will be json with the params as the programmer want.
 
-for example if you have one EV3 and two Grove pi the json will be in this structure:
+For example if you have one EV3 and two Grove pi the json will be in this structure:
 
 .. code-block:: javascript
   :linenos:
