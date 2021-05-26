@@ -129,7 +129,7 @@ Program Threads
 
 Let's understand what's going on here
 
-**1.**
+**1.** row 15
 
 .. code-block:: javascript
   :linenos:
@@ -154,7 +154,7 @@ It will subscribe to the grovePi port where a sensor will be,
 and will read data from this sensor while it runs.
 
 
-**2.**
+**2.** row 28
 
 .. code-block:: javascript
   :linenos:
@@ -179,7 +179,7 @@ It will subscribe to the EV3 port where the engine will be,
 and it will always read data from this port to check if it's 15-20 cm from the wall.
 
 
-**3.**
+**3.** row 41
 
 .. code-block:: javascript
   :linenos:
@@ -205,7 +205,7 @@ and it will always read data from this port to check if it's more than 20 cm fro
 
 
 
-**4.**
+**4.** row 54
 
 .. code-block:: javascript
   :linenos:
@@ -230,7 +230,7 @@ It will subscribe to the EV3 port where the engine will be,
 and it will always read data from this port to check if it's less than 15 cm from the wall.
 
 
-**5.**
+**5.** row 67
 
 .. code-block:: javascript
   :linenos:
@@ -250,7 +250,7 @@ When recieving the result from AlgorithmEventSet it will send the data to "Test"
 
 
 
-**6.**
+**6.** row 74
 
 .. code-block:: javascript
   :linenos:

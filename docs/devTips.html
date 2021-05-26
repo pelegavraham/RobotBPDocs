@@ -43,6 +43,16 @@
             
   <div class="section" id="appendices">
 <h1>Appendices<a class="headerlink" href="#appendices" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>The robot is slower than BPjs, and it may be overflowed with commands and this can cause lost of commands.
+make sure you don’t send to many commands together (especially not in while(true)).</p></li>
+<li><p>When adding a new functionality to CommandHandler in RobotActuator - you might want to test it,
+use the TestBoard object for these tests if needed.
+This will allow you to test methods without connecting the robot.</p></li>
+<li><p>When updating one of the projects - make sure you run ‘mvn deploy’ command to update the maven dependency.</p></li>
+<li><p>Make sure ‘build’ is always the first event to run.</p></li>
+<li><p>When running ‘RobotActuator’ project, make sure it run on the RaspberryPi.</p></li>
+</ul>
 </div>
 
 
