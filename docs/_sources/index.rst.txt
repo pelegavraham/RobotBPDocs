@@ -5,6 +5,10 @@
 
 Welcome to RobotBP's documentation!
 ===================================
+First we will note that this site documents project called RobotBP.
+This project is final project in SE degree in Ben-Gurion University done in 2021.
+Link to the department's website: https://in.bgu.ac.il/engn/se/Pages/default.aspx .
+
 Here you will learn how to actuate robot based on raspberry-pi supported EV3 Lego and Grove-pi kit with behavioral
 programming written in Javascript, whats called BPjs.
 

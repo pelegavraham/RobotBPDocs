@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'RobotBP'
-copyright = '2021, Adi Jumah, David Ziegler, Peleg Avraham'
+copyright = 'Ben-Gurion University SE project documentation 2021, Adi Jumah, David Ziegler, Peleg Avraham'
 author = 'Adi Jumah, David Ziegler, Peleg Avraham'
 # The full version, including alpha/beta/rc tags
 release = '0.1'
