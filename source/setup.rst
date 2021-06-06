@@ -66,6 +66,7 @@ link to RobotUtils repo: https://github.com/Dave-Zi/RobotUtils
 
 link to RobotBPDocs repo: https://github.com/pelegavraham/RobotBPDocs
 
+Make sure there is no compilation errors, the project opens as Maven project and the jdk version at least 11.0.9.
 
 .. admonition:: Note
 

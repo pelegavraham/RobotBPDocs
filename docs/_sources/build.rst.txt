@@ -72,6 +72,20 @@ For Grove pi ports: The optional sensors that the system support with, are:
 
 As mention, the ports of the grove pi are A0-A2 and D0-D8
 
+Port Description
+-----------------
+.. figure:: /images/GrovePi-Port-description.jpg
+    :scale: 50 %
+
+GrovePi sockets A0, A1, and A2 use the A/D converter and support analogRead() values 0-1023.
+
+GrovePi sockets D2 through D8 are digital and support 1-bit input/output, values 0-1, using digitalRead() and digitalWrite().
+
+GrovePi sockets D3, D5, D6 also support Pulse Width Modulation (PWM) which means you can write 8-bit values 0-255 with analogWrite().
+
+.. figure:: /images/ports.jpg
+    :scale: 95 %
+
 Support nick names
 -------------------
 In addition, you can rename the boards and the ports you build, so that it will be easier for you to call them.
