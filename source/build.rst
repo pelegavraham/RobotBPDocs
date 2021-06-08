@@ -96,6 +96,8 @@ To rename the ports: in the EV3 add the port name(A-D, 1-4) as key, json with 'N
 
 in the GrovePi add to the port name(A0-A2, D0-D8) as key, json with 'Name' and 'Device' as keys and the name want and the name of the sensor respectively as the values, as value.
 
+In this way, you can specifies in the other commands, like: subscribe, unsubscribe, drive, rotate etc. the nicknames as parameters instead of the indexes.
+
 Example
 ----------
 
@@ -136,7 +138,6 @@ Example
           )
       })
    });
-
 
 .. warning::
    

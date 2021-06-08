@@ -10,6 +10,4 @@ Appendices
 
 - 	When updating one of the projects - make sure you run 'mvn deploy' command to update the maven dependency.
 
-- 	Make sure 'build' is always the first event to run.
-
--	When running 'RobotActuator' project, make sure it run on the RaspberryPi.
+- 	When you add new command you can use the nicknames that you define in the build command and subscribe them, as parameters in the json of the command.
