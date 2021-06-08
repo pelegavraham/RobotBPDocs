@@ -40,9 +40,30 @@ In the end, after you install and configure the rabbitMQ, add the ``Embedded Lin
 
 To run the program:
 
-(1) Run the Actuator class in the RobotActuator repository, after you edit the configuration to use the
+1. Run the Actuator class in the RobotActuator repository, after you edit the configuration to use the
 ``Embedded Linux JVM`` as mention in the Setup instructions.
 
-(2) Run the HelloWorld class in the BPjsProject repository (on your local computer)
+2. Run the HelloWorld class in the BPjsProject repository (on your local computer)
 
+.. warning::
 
+   When you stop your program and can't stop the commands that continue to send, you need to stop the java program and clean all the garbage data in the project.
+   To stop this you need to run above the raspberry pi the following two .sh files that contain the next rows:
+
+    **stopJava.sh:**
+
+    .. code-block:: bash
+        :linenos:
+
+        pgrep -a java
+        sudo kill $(pidof java)
+        pgrep -a java
+
+    **cleanProjects.sh:**
+
+    .. code-block:: bash
+        :linenos:
+
+        sudo rm -rf /home/pi/IdeaProjects
+
+    The files will saved in home directory in the raspberry pi and will run from there.

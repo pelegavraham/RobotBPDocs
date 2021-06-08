@@ -68,11 +68,31 @@
 <h2>Running the program<a class="headerlink" href="#running-the-program" title="Permalink to this headline">¶</a></h2>
 <p>In the end, after you install and configure the rabbitMQ, add the <code class="docutils literal notranslate"><span class="pre">Embedded</span> <span class="pre">Linux</span> <span class="pre">JVM</span></code> extension and write the js file</p>
 <p>To run the program:</p>
-<p>(1) Run the Actuator class in the RobotActuator repository, after you edit the configuration to use the
+<p>1. Run the Actuator class in the RobotActuator repository, after you edit the configuration to use the
 <code class="docutils literal notranslate"><span class="pre">Embedded</span> <span class="pre">Linux</span> <span class="pre">JVM</span></code> as mention in the Setup instructions.</p>
 <ol class="arabic simple" start="2">
 <li><p>Run the HelloWorld class in the BPjsProject repository (on your local computer)</p></li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When you stop your program and can’t stop the commands that continue to send, you need to stop the java program and clean all the garbage data in the project.
+To stop this you need to run above the raspberry pi the following two .sh files that contain the next rows:</p>
+<blockquote>
+<div><p><strong>stopJava.sh:</strong></p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>pgrep -a java
+sudo <span class="nb">kill</span> <span class="k">$(</span>pidof java<span class="k">)</span>
+pgrep -a java
+</pre></div>
+</td></tr></table></div>
+<p><strong>cleanProjects.sh:</strong></p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>sudo rm -rf /home/pi/IdeaProjects
+</pre></div>
+</td></tr></table></div>
+<p>The files will saved in home directory in the raspberry pi and will run from there.</p>
+</div></blockquote>
+</div>
 </div>
 </div>
 
