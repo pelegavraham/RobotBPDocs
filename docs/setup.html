@@ -61,25 +61,19 @@ with the user name and password you defined at the installation.</p>
 </div>
 <div class="section" id="setting-up-the-ev3">
 <h2>3. Setting up the EV3<a class="headerlink" href="#setting-up-the-ev3" title="Permalink to this headline">¶</a></h2>
-<p>The connection between the raspberry and the EV3 is made via bluetooth.</p>
-<p>To configure the bluetooth connection follow the introductions <a class="reference external" href="https://www.lego.com/en-us/service/help/products/themes-sets/mindstorms/connecting-with-bluetooth-to-lego-mindstorms-ev3-apps-408100000007982">here</a>.</p>
-</div>
-<div class="section" id="prepare-your-coding-environment">
-<h2>4. Prepare your coding environment<a class="headerlink" href="#prepare-your-coding-environment" title="Permalink to this headline">¶</a></h2>
-<p>For your convenience, you can coding in your local computer and the running will apply directly on the raspberry pi.</p>
-<p>If you use intellij, first you need to add the extension: <code class="docutils literal notranslate"><span class="pre">Embedded</span> <span class="pre">Linux</span> <span class="pre">JVM</span></code>.</p>
-<p>In the RobotActuator repository, Go to <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Configuration</span></code> and add new <code class="docutils literal notranslate"><span class="pre">Embedded</span> <span class="pre">Linux</span> <span class="pre">JVM</span></code> configuration.</p>
-<p>Then enter the <code class="docutils literal notranslate"><span class="pre">Hostname</span></code> (ip), <code class="docutils literal notranslate"><span class="pre">Username</span></code> and <code class="docutils literal notranslate"><span class="pre">Password</span></code> of the raspberry pi,
-and define the <code class="docutils literal notranslate"><span class="pre">Module</span></code> and the <code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">Class</span></code>.</p>
+<p>The connection between the raspberry and the EV3 is made via bluetooth.
+To configure the bluetooth connection follow the introductions <a class="reference external" href="https://www.lego.com/en-us/service/help/products/themes-sets/mindstorms/connecting-with-bluetooth-to-lego-mindstorms-ev3-apps-408100000007982">here</a>.</p>
+<p>After this part you will have Serial port through it you can connect in bluetooth to the EV3.
+Later you will use it to build the robot in the system software environment.</p>
 </div>
 <div class="section" id="install-rabbitmq">
-<h2>5. Install RabbitMQ<a class="headerlink" href="#install-rabbitmq" title="Permalink to this headline">¶</a></h2>
+<h2>4. Install RabbitMQ<a class="headerlink" href="#install-rabbitmq" title="Permalink to this headline">¶</a></h2>
 <p>In the project, there is communication between the commands that send to the robot from the user and the data that back from the robot.</p>
 <p>The communication implemented in platform who called: RabbitMQ. Is famous IOT communication protocol.</p>
 <p>To download RabbitMQ on the raspberry pi follow the introductions <a class="reference external" href="https://www.rabbitmq.com/install-debian.html">here</a>.</p>
 </div>
 <div class="section" id="download-the-code-from-github">
-<h2>6. Download the code from github<a class="headerlink" href="#download-the-code-from-github" title="Permalink to this headline">¶</a></h2>
+<h2>5. Download the code from github<a class="headerlink" href="#download-the-code-from-github" title="Permalink to this headline">¶</a></h2>
 <p>link to Robot repo: <a class="reference external" href="https://github.com/Dave-Zi/Robot">https://github.com/Dave-Zi/Robot</a></p>
 <p>link to RobotActuator repo: <a class="reference external" href="https://github.com/Dave-Zi/RobotActuator">https://github.com/Dave-Zi/RobotActuator</a></p>
 <p>link to BPjsRobotProject repo: <a class="reference external" href="https://github.com/Dave-Zi/BPjsRobotProject">https://github.com/Dave-Zi/BPjsRobotProject</a></p>
@@ -92,6 +86,13 @@ and define the <code class="docutils literal notranslate"><span class="pre">Modu
 BPjsRobotProject and RobotActuator repos.
 If you later want to expand the project, you will need to download the other repos.</p>
 </div>
+</div>
+<div class="section" id="prepare-your-coding-environment">
+<h2>6. Prepare your coding environment<a class="headerlink" href="#prepare-your-coding-environment" title="Permalink to this headline">¶</a></h2>
+<p>For your convenience, you can coding in your local computer and the running will apply directly on the raspberry pi.</p>
+<p>If you use intellij, first you need to add the plugin: <code class="docutils literal notranslate"><span class="pre">Embedded</span> <span class="pre">Linux</span> <span class="pre">JVM</span></code>.</p>
+<p>In the RobotActuator repository, Go to <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Configuration</span></code> and add new <code class="docutils literal notranslate"><span class="pre">Embedded</span> <span class="pre">Linux</span> <span class="pre">JVM</span></code> configuration.</p>
+<p>Then enter the <code class="docutils literal notranslate"><span class="pre">Hostname</span></code> (ip), <code class="docutils literal notranslate"><span class="pre">Username</span></code> and <code class="docutils literal notranslate"><span class="pre">Password</span></code> of the raspberry pi, and define the <code class="docutils literal notranslate"><span class="pre">Module</span></code> and the <code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">Class</span></code>.</p>
 </div>
 </div>
 
@@ -108,9 +109,9 @@ If you later want to expand the project, you will need to download the other rep
 <li><a class="reference internal" href="#setting-up-the-raspberry-pi">1. Setting up the raspberry pi</a></li>
 <li><a class="reference internal" href="#setting-up-the-grove-pi">2. Setting up the grove pi</a></li>
 <li><a class="reference internal" href="#setting-up-the-ev3">3. Setting up the EV3</a></li>
-<li><a class="reference internal" href="#prepare-your-coding-environment">4. Prepare your coding environment</a></li>
-<li><a class="reference internal" href="#install-rabbitmq">5. Install RabbitMQ</a></li>
-<li><a class="reference internal" href="#download-the-code-from-github">6. Download the code from github</a></li>
+<li><a class="reference internal" href="#install-rabbitmq">4. Install RabbitMQ</a></li>
+<li><a class="reference internal" href="#download-the-code-from-github">5. Download the code from github</a></li>
+<li><a class="reference internal" href="#prepare-your-coding-environment">6. Prepare your coding environment</a></li>
 </ul>
 </li>
 </ul>

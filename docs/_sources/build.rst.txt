@@ -98,6 +98,10 @@ in the GrovePi add to the port name(A0-A2, D0-D8) as key, json with 'Name' and '
 
 In this way, you can specifies in the other commands, like: subscribe, unsubscribe, drive, rotate etc. the nicknames as parameters instead of the indexes.
 
+.. warning::
+
+   The name of the ports can't be '_' or numbers with prefix '_' like: '_1', '_2' etc.
+
 Example
 ----------
 

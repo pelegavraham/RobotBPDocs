@@ -28,23 +28,13 @@ As you can see in the picture:
 3. Setting up the EV3
 -----------------------
 
-The connection between the raspberry and the EV3 is made via bluetooth. 
-
+The connection between the raspberry and the EV3 is made via bluetooth.
 To configure the bluetooth connection follow the introductions `here <https://www.lego.com/en-us/service/help/products/themes-sets/mindstorms/connecting-with-bluetooth-to-lego-mindstorms-ev3-apps-408100000007982>`__.
 
-4. Prepare your coding environment
--------------------------------------
+After this part you will have Serial port through it you can connect in bluetooth to the EV3.
+Later you will use it to build the robot in the system software environment.
 
-For your convenience, you can coding in your local computer and the running will apply directly on the raspberry pi.
-
-If you use intellij, first you need to add the extension: ``Embedded Linux JVM``.
-
-In the RobotActuator repository, Go to ``Edit Configuration`` and add new ``Embedded Linux JVM`` configuration.
-
-Then enter the ``Hostname`` (ip), ``Username`` and ``Password`` of the raspberry pi,
-and define the ``Module`` and the ``Main Class``.
-
-5. Install RabbitMQ
+4. Install RabbitMQ
 ---------------------
 
 In the project, there is communication between the commands that send to the robot from the user and the data that back from the robot.
@@ -53,7 +43,7 @@ The communication implemented in platform who called: RabbitMQ. Is famous IOT co
 
 To download RabbitMQ on the raspberry pi follow the introductions `here <https://www.rabbitmq.com/install-debian.html>`__.
 
-6. Download the code from github
+5. Download the code from github
 ----------------------------------
 
 link to Robot repo: https://github.com/Dave-Zi/Robot
@@ -73,3 +63,14 @@ Make sure there is no compilation errors, the project opens as Maven project and
    You don't need to download all the repos. For your first steps in the project you can download
    BPjsRobotProject and RobotActuator repos.
    If you later want to expand the project, you will need to download the other repos.
+
+6. Prepare your coding environment
+-------------------------------------
+
+For your convenience, you can coding in your local computer and the running will apply directly on the raspberry pi.
+
+If you use intellij, first you need to add the plugin: ``Embedded Linux JVM``.
+
+In the RobotActuator repository, Go to ``Edit Configuration`` and add new ``Embedded Linux JVM`` configuration.
+
+Then enter the ``Hostname`` (ip), ``Username`` and ``Password`` of the raspberry pi, and define the ``Module`` and the ``Main Class``.

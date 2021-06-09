@@ -129,12 +129,13 @@ Program Threads
 
 Let's understand what's going on here
 
-**1.** row 15
+**1. Change direction**
 
 .. code-block:: javascript
+  :lineno-start: 15
   :linenos:
 
-  bp.registerBThread("Do Something with Data", function () {
+  bp.registerBThread("Change direction", function () {
       bp.sync({request: bp.Event("Subscribe", {"GrovePi": ["D2", "D4"]})});
 
       while (true) {
@@ -154,9 +155,10 @@ It will subscribe to the grovePi port where a sensor will be,
 and will read data from this sensor while it runs.
 
 
-**2.** row 28
+**2. Just Right**
 
 .. code-block:: javascript
+  :lineno-start: 28
   :linenos:
 
   bp.registerBThread("Just Right", function () {
@@ -179,9 +181,10 @@ It will subscribe to the EV3 port where the engine will be,
 and it will always read data from this port to check if it's 15-20 cm from the wall.
 
 
-**3.** row 41
+**3. Too Far Right**
 
 .. code-block:: javascript
+  :lineno-start: 41
   :linenos:
 
   bp.registerBThread("Too Far Right", function () {
@@ -205,9 +208,10 @@ and it will always read data from this port to check if it's more than 20 cm fro
 
 
 
-**4.** row 54
+**4. Too Far Left**
 
 .. code-block:: javascript
+  :lineno-start: 54
   :linenos:
 
   bp.registerBThread("Too Far Left", function () {
@@ -230,9 +234,10 @@ It will subscribe to the EV3 port where the engine will be,
 and it will always read data from this port to check if it's less than 15 cm from the wall.
 
 
-**5.** row 67
+**5. Do My Algorithm**
 
 .. code-block:: javascript
+  :lineno-start: 67
   :linenos:
 
   bp.registerBThread("Do My Algorithm", function () {
@@ -250,9 +255,10 @@ When recieving the result from AlgorithmEventSet it will send the data to "Test"
 
 
 
-**6.** row 74
+**6. Initiation**
 
 .. code-block:: javascript
+  :lineno-start: 74
   :linenos:
 
   bp.registerBThread("Initiation", function () {
