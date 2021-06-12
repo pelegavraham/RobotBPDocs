@@ -40,7 +40,7 @@ In the end, after you install and configure the rabbitMQ, add the ``Embedded Lin
 
 To run the program:
 
-1. Run the Actuator class in the RobotActuator repository, after you edit the configuration to use the
+1. Run the MainTest class in the RobotActuator repository, after you edit the configuration to use the
 ``Embedded Linux JVM`` as mention in the Setup instructions.
 
 2. Run the HelloWorld class in the BPjsProject repository (on your local computer)

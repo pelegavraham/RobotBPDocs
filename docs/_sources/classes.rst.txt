@@ -18,7 +18,7 @@ RobotActuator
 
 **CommandHandler**: handling the commands that gets from the program by the CommunicationHandler and update the RobotSensorData.
 
-**Actuator**: Collect the data from the robot when the data is updated and send it by the CommunicationHandler.
+**MainTest**: Collect the data from the robot when the data is updated and send it by the CommunicationHandler.
 
 Receive commands and execute the appropriate function as define by the CommandsHandler.
 

@@ -47,7 +47,7 @@
 <p>We show here the way to do that.</p>
 <p>The 1-3 steps refer to RobotUtils repository, and related to the definition of the new channel.</p>
 <p>The 3-5 steps refer to RobotBProgramRunnerListener class in BPjsProject repository and</p>
-<p>Actuator class in RobotActuator repository, and related to the usage in the new channel.</p>
+<p>MainTest class in RobotActuator repository, and related to the usage in the new channel.</p>
 <div class="section" id="add-queue-name-enum">
 <h2>3. Add Queue Name Enum<a class="headerlink" href="#add-queue-name-enum" title="Permalink to this headline">¶</a></h2>
 <p>add enum in QueueNameEnum with the name of your new queue.</p>
@@ -73,14 +73,14 @@
 <div class="section" id="purge-queue">
 <h2>4. Purge Queue<a class="headerlink" href="#purge-queue" title="Permalink to this headline">¶</a></h2>
 <p>Now, after you defined all the behavior of the queue in the different functions this is the time to use them.</p>
-<p>In RobotBProgramRunnerListener and Actuator use ICommunication to purge the queue as you define in step 3.</p>
+<p>In RobotBProgramRunnerListener and MainTest use ICommunication to purge the queue as you define in step 3.</p>
 </div>
 <div class="section" id="send-messages-in-the-queue">
 <h2>5. Send Messages in the queue<a class="headerlink" href="#send-messages-in-the-queue" title="Permalink to this headline">¶</a></h2>
 <p>Now everything is prepared to send and receive the messages over the new channel. The implementation in that part is</p>
 <p>at your discretion, according to the commands that use in this channel.</p>
-<p>You can send the commands over the channel in RobotBProgramRunnerListener and get them in Actuator</p>
-<p>and act accordingly. Or alternatively, send the commands over the channel in Actuator and get them</p>
+<p>You can send the commands over the channel in RobotBProgramRunnerListener and get them in MainTest</p>
+<p>and act accordingly. Or alternatively, send the commands over the channel in MainTest and get them</p>
 <p>in RobotBProgramRunnerListener.</p>
 </div>
 </div>

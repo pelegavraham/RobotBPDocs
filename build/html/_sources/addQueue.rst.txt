@@ -9,7 +9,7 @@ The 1-3 steps refer to RobotUtils repository, and related to the definition of t
 
 The 3-5 steps refer to RobotBProgramRunnerListener class in BPjsProject repository and
 
-Actuator class in RobotActuator repository, and related to the usage in the new channel.
+MainTest class in RobotActuator repository, and related to the usage in the new channel.
 
 3. Add Queue Name Enum
 -----------------------
@@ -39,7 +39,7 @@ Use the enum you created in step 1.
 ----------------
 Now, after you defined all the behavior of the queue in the different functions this is the time to use them.
 
-In RobotBProgramRunnerListener and Actuator use ICommunication to purge the queue as you define in step 3.
+In RobotBProgramRunnerListener and MainTest use ICommunication to purge the queue as you define in step 3.
 
 5. Send Messages in the queue
 ------------------------------
@@ -47,9 +47,9 @@ Now everything is prepared to send and receive the messages over the new channel
 
 at your discretion, according to the commands that use in this channel.
 
-You can send the commands over the channel in RobotBProgramRunnerListener and get them in Actuator
+You can send the commands over the channel in RobotBProgramRunnerListener and get them in MainTest
 
-and act accordingly. Or alternatively, send the commands over the channel in Actuator and get them
+and act accordingly. Or alternatively, send the commands over the channel in MainTest and get them
 
 in RobotBProgramRunnerListener.
 
