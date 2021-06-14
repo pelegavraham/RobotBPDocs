@@ -81,5 +81,7 @@ In the RobotActuator repository, Go to ``Edit Configuration`` and add new ``Embe
 
 Then enter the ``Hostname`` (ip), ``Username`` and ``Password`` of the raspberry pi, and define the ``Module`` and the ``Main Class``.
 
-Even though, you can run the code without intellij too, just over the ssh connection.
-In this case, you should run the projects directly on the raspberry pi with ssh connection and mvn exec:java.
+.. Note::
+    You can run the code without intellij too, just over the ssh connection.
+    Maybe you prefer this way instead of intellij if you want to run the code only.
+    In this case, you should run the projects directly on the raspberry pi with ssh connection and mvn exec:java.
