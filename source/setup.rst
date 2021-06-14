@@ -15,6 +15,12 @@ To download VNC click `here <https://www.realvnc.com/en/connect/download/viewer/
 The connection between your local computer and the raspberry pi made in the VNC by entering the ip of the raspberry
 with the user name and password you defined at the installation.
 
+.. Note::
+    You can install 'raspberrypi os light' instead of the 'raspberrypi os desktop' version without the interface.
+    In this case the configuration of the settings made by commands. For the setup of the wi-fi and the ssh
+    you can use this `site <https://www.tomshardware.com/reviews/raspberry-pi-headless-setup-how-to,6028.html>`__.
+    For the setup of the bluetooth you can use this `site <https://www.raspberrypi.org/forums/viewtopic.php?t=214373>`__.
+
 2. Setting up the grove pi
 ----------------------------
 
@@ -41,7 +47,7 @@ In the project, there is communication between the commands that send to the rob
 
 The communication implemented in platform who called: RabbitMQ. Is famous IOT communication protocol.
 
-To download RabbitMQ on the raspberry pi follow the introductions `here <https://www.rabbitmq.com/install-debian.html>`__.
+To download RabbitMQ on the raspberry pi follow the introductions `here <http://pont.ist/rabbit-mq/>`__.
 
 5. Download the code from github
 ----------------------------------
@@ -74,3 +80,6 @@ If you use intellij, first you need to add the plugin: ``Embedded Linux JVM``.
 In the RobotActuator repository, Go to ``Edit Configuration`` and add new ``Embedded Linux JVM`` configuration.
 
 Then enter the ``Hostname`` (ip), ``Username`` and ``Password`` of the raspberry pi, and define the ``Module`` and the ``Main Class``.
+
+Even though, you can run the code without intellij too, just over the ssh connection.
+In this case, you should run the projects directly on the raspberry pi with ssh connection and mvn exec:java.
