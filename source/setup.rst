@@ -40,6 +40,9 @@ To configure the bluetooth connection follow the introductions `here <https://ww
 After this part you will have Serial port through it you can connect in bluetooth to the EV3.
 Later you will use it to build the robot in the system software environment.
 
+You can build the Ev3 robot according to the instructions `here <https://education.lego.com/en-us/product-resources/mindstorms-ev3/downloads/building-instructions>`__.
+Select the model you want and follow his instructions.
+
 4. Install RabbitMQ
 ---------------------
 
